@@ -19,7 +19,7 @@ module.exports.create = async function(req, res){
                 message: "Post created!"
             });
         }
-                    
+
         req.flash('success', 'Post published!');
         return res.redirect('back');
 

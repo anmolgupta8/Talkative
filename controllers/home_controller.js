@@ -39,6 +39,7 @@ const User = require('../models/user');
 // Async-Await Method
 try{
     module.exports.home = async function(req,res){
+        // populate the user of each post
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user')
@@ -62,5 +63,3 @@ catch(err){
     console.log('Error', err);
     return;
 }
-
-// Similar thing can be done for other controller actions
