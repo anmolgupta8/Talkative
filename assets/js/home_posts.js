@@ -177,6 +177,7 @@ class PostComments {
                 url: $(deleteLink).prop('href'),
                 success: function (data) {
                     $(`#post-${data.data.post_id}`).remove();
+                    document.getElementById("each-post").remove();
                     new Noty({
                         theme: 'relax',
                         text: "Post Deleted",
