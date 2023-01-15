@@ -1,0 +1,12 @@
+#user_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-form-attribute{
+    margin: 4px;
+    padding: 3px;
+    text-align: left;
+    display: block;
+    width:fit-content;
+}
