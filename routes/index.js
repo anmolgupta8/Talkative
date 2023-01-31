@@ -1,6 +1,6 @@
 const { application } = require('express');
 const express = require('express');
-const router = express.Router();
+const router = express.Router();  // Helps in separating app routes and controllers
 
 const homeController = require('../controllers/home_controller');
 
