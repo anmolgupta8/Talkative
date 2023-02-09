@@ -9,4 +9,9 @@
     text-align: left;
     display: block;
     width:fit-content;
+    height: 25px;
+}
+
+.user-form-attribute a{
+    font-size: larger;
 }

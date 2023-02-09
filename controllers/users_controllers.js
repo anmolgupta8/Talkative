@@ -5,6 +5,7 @@ const path = require('path');
 module.exports.profile = function(req,res){
     // res.end('<h1>User Profile</h1>');
     User.findById(req.params.id,function(err,user){
+        console.log(user);
         res.render('user_profile',{
             title : 'User-Profile',
             profile_user : user
