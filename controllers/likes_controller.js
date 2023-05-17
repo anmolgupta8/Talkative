@@ -13,6 +13,7 @@ module.exports.toggleLike = async function(req,res){
         }
         else{
             likeable = await Comment.findById(req.query.id).populate('likes');
+            console.log(likeable);
         }
 
         // Check if a like already exists

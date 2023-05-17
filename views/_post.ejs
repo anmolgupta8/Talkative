@@ -25,24 +25,24 @@
                 <%= post.likes.length %> Likes
             <% } %>
         </small>
-    </li>
-</p>
-<div class="post-comments">
-    <% if(locals.user){ %>
-        <form action="/comments/create" method="POST">
-            <input type="text" name="content" placeholder="Type here to add a comment..." required size="30">
-            <input type="hidden" name="post" value="<%= post._id %>">
-            <input type="submit" value="Add Comment">
-        </form>
-    <% } %>
-    <div class="post-comments-list">
-        <small><b>Comments : </b></small> <br>
-        <ul id="post-comments-<%= post._id %>">
-            <% for(comment of post.comments){ %>
-                <p id="comment-<%= comment._id %>">
-                    <%- include('_comments') -%>
-                </p>
-            <% } %>
-        </ul>
-    </div>
-</div>
+        <div class="post-comments">
+            <% if(locals.user){ %>
+                <form action="/comments/create" method="POST">
+                    <input type="text" name="content" placeholder="Type here to add a comment..." required size="30">
+                    <input type="hidden" name="post" value="<%= post._id %>">
+                    <input type="submit" value="Add Comment">
+                </form>
+                <% } %>
+                <div class="post-comments-list">
+                    <small><b>Comments : </b></small> <br>
+                    <ul id="post-comments-<%= post._id %>">
+                        <% for(comment of post.comments){ %>
+                            <p id="comment-<%= comment._id %>">
+                                <%- include('_comments') -%>
+                            </p>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            </p>
