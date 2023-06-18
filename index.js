@@ -1,4 +1,5 @@
 const express = require('express');
+const env = require('./config/environment');
 const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
@@ -20,10 +21,11 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(3000);
 console.log('Chat server is listening on port 3000');
+const path = require('path');
 
 // app.use(sassMiddleware({
-//     src : './assets/scss',
-//     dest : './assets/css',
+//     src : path.join(__dirname, env.asset_path, 'scss'),
+//     dest : path.join(__dirname, env.asset_path, 'css'),
 //     debug : true,
 //     outputStyle: 'extended',
 //     prefix : '/css'
@@ -34,7 +36,8 @@ app.use(cookieParser());
 
 app.use(expressLayouts);
 
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
+// app.use(express.static('./assets'));
 // makes the upload path available to the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
 // extract style and scripts from sub pages into the layout
@@ -49,7 +52,7 @@ app.set('views','./views');
 app.use(session({
     name : 'codeial',
     // TODO : change the secret before deployment in production mode
-    secret : 'blahsomething',
+    secret : env.session_cookie_key,
     saveUninitialized : false,
     resave : false,
     cookie : {
