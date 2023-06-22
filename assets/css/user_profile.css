@@ -1,4 +1,12 @@
-#style{
-    border: 2.5px dotted black;
+#heading-user-profile{
+    width: fit-content;
+    margin-left: 10px;
+    border: 3px black;
     border-style: dashed;
+    border-radius: 20px;
+    padding: 4px;
+}
+#style{
+    border: 2.5px solid black;
+    border-radius: 20px;
 }
