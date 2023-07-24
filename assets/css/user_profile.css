@@ -10,3 +10,13 @@
     border: 2.5px solid black;
     border-radius: 20px;
 }
+#image-style{
+    height: 350px;
+    width: auto;
+    margin: auto;
+    padding: 20px;
+}
+.end-style{
+    margin: auto;
+    padding: 5px;
+}
