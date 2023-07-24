@@ -53,7 +53,6 @@ app.set('views','./views');
 // MongoStore is used to store the session cookie in the db
 app.use(session({
     name : 'codeial',
-    // TODO : change the secret before deployment in production mode
     secret : env.session_cookie_key,
     saveUninitialized : false,
     resave : false,
